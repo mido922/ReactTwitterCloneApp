@@ -5,7 +5,7 @@ import Feed from './Feed';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       {/*Sidebar */}
       <Sidebar />
 
@@ -13,6 +13,7 @@ function App() {
       <Feed />
 
       {/* Widgets */}
+      <Widgets />
     </div>
   );
 }

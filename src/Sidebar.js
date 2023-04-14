@@ -8,7 +8,6 @@ import { Button } from '@mui/material';
 function Sidebar() {
   return (
     <div className="sidebar">
-        Hello
         <TwitterIcon />
 
         <SidebarOption active Icon={HomeIcon} text ="Home"/>
@@ -17,7 +16,6 @@ function Sidebar() {
         <SidebarOption Icon={HomeIcon} />
 
         <Button variant="outlined" className="sidebar__tweet" fullWidth>Tweet</Button>
-
     </div>
   )
 }
