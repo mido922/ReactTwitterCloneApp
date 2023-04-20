@@ -19,23 +19,24 @@ function Post({
   return (
     <div className="post">
         <div className="post__avatar">
-            <Avatar src ="" />
+            <Avatar src ={avatar} />
         </div>
         <div className="post__body">
           <div className="post__header">
             <div className="post__headerText">
               <h3>
-                mido said <span className="post__headerSpecial">
-                  <VerifiedIcon className="post__badge" />
+                {displayName} said <span className="post__headerSpecial">
+                  {verified && <VerifiedIcon className="post__badge" />}
+                  @{username}
                 </span>
               </h3>
             </div>
             <div className="post__headerDescription">
-              Hello Twitter! My first tweet.
+              {text}
             </div>
           </div>
           <img
-            src="https://i.imgur.com/s4lPxYl.jpeg" 
+            src={image}
             alt="An image goes here" 
           />
           <div className="post__footer">

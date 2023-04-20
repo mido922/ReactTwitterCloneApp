@@ -31,8 +31,6 @@ function Widgets() {
         options={{text: "#reactjs is awesome", via: "mido9_2"}}
       />
       </div>
-
-
     </div>
   )
 }
