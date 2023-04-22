@@ -9,6 +9,7 @@ function Tweetbox() {
 
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
+  const [tweetDate, setTweetDate] = useState("");
 
   const sendTweet = async (e) => {
     e.preventDefault();  
