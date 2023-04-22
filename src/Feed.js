@@ -8,22 +8,23 @@ import { getFirestore, getDocs } from 'firebase/firestore';
 
 function Feed() {
 
-  const[posts, setPosts] = useState()
-
+  const [posts, setPosts] = useState([]);
+ 
   const fetchPosts = async () => {
-
-    await getDocs(collection(db, "posts"))
-      .then((querySnapshot)=>{
-        const newData = querySnapshot.docs
-          .map((doc) => ({...doc.data(), id:doc.id}));
-          setPosts(newData)
-          console.log(posts,newData);
-      })
-    }      
-      
-    useEffect(()=>{
+     
+      await getDocs(collection(db, "posts"))
+          .then((querySnapshot)=>{               
+              const newData = querySnapshot.docs
+                  .map((doc) => ({...doc.data(), id:doc.id }));
+              setPosts(newData);                
+              console.log(posts, newData);
+          })
+     
+  }
+ 
+  useEffect(()=>{
       fetchPosts();
-    }, []) 
+  }, [])
   
 
   return (
