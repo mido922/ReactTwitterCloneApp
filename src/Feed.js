@@ -5,27 +5,25 @@ import "./Feed.css";
 import {db} from './firebase';
 import { collection, doc, getdoc, setDoc, onSnapshot, ref, getDoc, QuerySnapshot } from "firebase/firestore"; 
 import { getFirestore, getDocs } from 'firebase/firestore';
+import FlipMove from 'react-flip-move';
 
 function Feed() {
 
   const [posts, setPosts] = useState([]);
  
   const fetchPosts = async () => {
-     
       await getDocs(collection(db, "posts"))
           .then((querySnapshot)=>{               
               const newData = querySnapshot.docs
                   .map((doc) => ({...doc.data(), id:doc.id }));
               setPosts(newData);                
               console.log(posts, newData);
-          })
-     
+            })
   }
- 
+  
   useEffect(()=>{
       fetchPosts();
   }, [])
-  
 
   return (
 
@@ -38,19 +36,21 @@ function Feed() {
 
         {/* Post */}
         
-
-        {console.log(posts)}
-
+        <FlipMove>
         {posts.map(
           post =>(
           
-          <Post displayName={post.displayName}
+          <Post
+          key={post.id}
+          displayName={post.displayName}
           username={post.username}
           verified={post.verified}
           text={post.text}
           avatar={post.avatar}
-          image={post.image} />
+          image={post.image} 
+          />
         ))}
+        </FlipMove>
 
         <Post displayName="mido9_2"
         username='mido9_2'
