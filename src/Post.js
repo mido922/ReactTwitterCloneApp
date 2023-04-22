@@ -11,7 +11,6 @@ function Post({
     displayName,
     username,
     verified,
-    timestamp,
     text,
     image,
     avatar

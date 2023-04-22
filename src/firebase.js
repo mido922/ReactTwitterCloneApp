@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCsoqGUEIPaLSgb1zSMjdigOVS33RTthFY",
@@ -11,8 +12,8 @@ const firebaseConfig = {
     measurementId: "G-GZLM4M60BG"
 };
 
+const app = initializeApp(firebaseConfig)
 
-const firebaseApp = initializeApp(firebaseConfig);
-const db = getFirestore(firebaseApp);
+const db = getFirestore(app);
 
-export default db;
+export {db};
