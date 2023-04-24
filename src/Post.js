@@ -27,11 +27,15 @@ const Post= forwardRef(({
           <div className="post__header">
             <div className="post__headerText">
               <div className="headerFont">
-                {displayName} {verified && <VerifiedIcon className="post__badge" />} <div className="post__headerSpecial">
-                  @{username}
+                  <div>
+                    {displayName} {verified && <VerifiedIcon className="post__badge" />} <div className="post__headerSpecial">
+                    @{username}
+                  </div>
                 </div>
                 <div className="timeStamp">
-                {timestamp}
+                  <div>
+                  {timestamp}
+                  </div>
                 </div>
               </div>
             </div>
