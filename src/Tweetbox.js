@@ -14,6 +14,10 @@ function Tweetbox() {
     e.preventDefault();  
    
     try {
+        var timeNow = Date()
+
+        var splitText=timeNow.split("GMT");
+
         const docRef = await addDoc(collection(db, "posts"), {
           avatar: "",
           displayName: "Placeholder",
@@ -21,7 +25,7 @@ function Tweetbox() {
           text: tweetMessage,
           username: "",
           verified: false,
-              
+          timestamp: splitText[0],
         });
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {

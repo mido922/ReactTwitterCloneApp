@@ -16,15 +16,25 @@
     width: 200px;
 }
 
-.post__headerText > h3 {
-    font-size: 15px;
+.headerFont {
+    display: flex;
+    font-size: 20px;
     margin-bottom: 5px;
+    font-weight: bold;
+    align-items: center;
 }
 
 .post__footer {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+}
+
+.timeStamp {
+    margin-left: 300px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(150, 150, 150)
 }
 
 .post__badge {
