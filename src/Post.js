@@ -16,7 +16,9 @@ const Post= forwardRef(({
     avatar,
     timestamp
 }, ref) => {
+
   return (
+
     <div className="post" ref={ref}>
         <div className="post__avatar">
             <Avatar src ={avatar} />
@@ -24,21 +26,23 @@ const Post= forwardRef(({
         <div className="post__body">
           <div className="post__header">
             <div className="post__headerText">
-              <h3>
-                {displayName} said <span className="post__headerSpecial">
-                  {verified && <VerifiedIcon className="post__badge" />}
+              <div className="headerFont">
+                {displayName} {verified && <VerifiedIcon className="post__badge" />} <div className="post__headerSpecial">
                   @{username}
-                </span>
-              </h3>
+                </div>
+                <div className="timeStamp">
+                {timestamp}
+                </div>
+              </div>
             </div>
             <div className="post__headerDescription">
               {text}
             </div>
           </div>
-          <img
+            <img
             src={image}
             alt="An image goes here" 
-          />
+            />
           <div className="post__footer">
           <ChatBubbleOutlineIcon fontSize="small" />
             <RepeatIcon fontSize="small" />

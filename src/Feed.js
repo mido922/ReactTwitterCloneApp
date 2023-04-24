@@ -3,9 +3,10 @@ import Tweetbox from './Tweetbox.js';
 import Post from "./Post";
 import "./Feed.css";
 import {db} from './firebase';
-import { collection, doc, getdoc, setDoc, onSnapshot, ref, getDoc, QuerySnapshot } from "firebase/firestore"; 
-import { getFirestore, getDocs } from 'firebase/firestore';
+import { collection} from "firebase/firestore"; 
+import { getDocs } from 'firebase/firestore';
 import FlipMove from 'react-flip-move';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function Feed() {
 
@@ -29,7 +30,7 @@ function Feed() {
 
     <div className="feed">
         <div className="feed__header">
-          <h2>Header</h2>
+            <ArrowBackIcon/> Home
         </div>
         
         <Tweetbox />
@@ -39,7 +40,6 @@ function Feed() {
         <FlipMove>
         {posts.map(
           post =>(
-          
           <Post
           key={post.id}
           displayName={post.displayName}
@@ -48,6 +48,7 @@ function Feed() {
           text={post.text}
           avatar={post.avatar}
           image={post.image} 
+          timestamp={post.timestamp}
           />
         ))}
         </FlipMove>
@@ -55,9 +56,10 @@ function Feed() {
         <Post displayName="mido9_2"
         username='mido9_2'
         verified={true}
-        text="Testing, this is hardcoded"
+        text="This is a hardcoded test tweet. It does not pull from the Firebase Database."
         avatar="https://pbs.twimg.com/profile_images/789180092257738753/DPsVKaM5_400x400.jpg"
-        image="https://i.imgur.com/s4lPxYl.jpeg" />
+        image="https://i.imgur.com/s4lPxYl.jpeg" 
+        timestamp="April 2023"/>
         {/* Post */}
         {/* Post */}
         {/* Post */}
