@@ -2,7 +2,7 @@
     display: flex;
     align-items: flex-start;
     padding-bottom: 10px;
-    border-bottom: 1px solid var(--twitter-background);
+    border-bottom: 2px solid var(--twitter-background);
 }
 
 .post__body {

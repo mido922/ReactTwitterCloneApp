@@ -15,9 +15,9 @@ function Feed() {
   const fetchPosts = async () => {
       await getDocs(collection(db, "posts"))
           .then((querySnapshot)=>{               
-              const newData = querySnapshot.docs
+              let newData = querySnapshot.docs
                   .map((doc) => ({...doc.data(), id:doc.id }));
-              setPosts(newData);                
+              setPosts(newData);
               console.log(posts, newData);
             })
   }
@@ -25,6 +25,8 @@ function Feed() {
   useEffect(()=>{
       fetchPosts();
   }, [])
+
+  let timer=Date.now()
 
   return (
 
@@ -49,6 +51,7 @@ function Feed() {
           avatar={post.avatar}
           image={post.image} 
           timestamp={post.timestamp}
+          timer={timer}
           />
         ))}
         </FlipMove>

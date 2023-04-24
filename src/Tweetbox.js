@@ -11,7 +11,6 @@ function Tweetbox() {
   const [tweetImage, setTweetImage] = useState("");
 
   const sendTweet = async (e) => {
-    e.preventDefault();  
    
     try {
         var timeNow = Date()
@@ -20,10 +19,10 @@ function Tweetbox() {
 
         const docRef = await addDoc(collection(db, "posts"), {
           avatar: "",
-          displayName: "Placeholder",
+          displayName: "Guest",
           image: tweetImage,
           text: tweetMessage,
-          username: "",
+          username: "guest",
           verified: false,
           timestamp: splitText[0],
         });
@@ -50,7 +49,7 @@ function Tweetbox() {
                   value={tweetImage}
                   onChange={(e) => setTweetImage(e.target.value)}
                   className="tweetBox__imageInput"
-                  placeholder="Enter image URL"
+                  placeholder="Enter image URL (Optional)."
                   type ="text" 
                 />
             </div>
