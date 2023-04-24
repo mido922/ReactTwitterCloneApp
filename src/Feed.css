@@ -9,8 +9,8 @@
 
 .feed {
     flex: 0.4;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
+    border-right: 3px solid var(--twitter-background);
+    border-left: 3px solid var(--twitter-background);
     min-width: fit-content;
     overflow-y: scroll;
 }

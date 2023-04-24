@@ -1,7 +1,6 @@
 #profileViewContainer {
     width: 100%;
     height: 50px;
-    border: 1px solid red;
     margin-top: 10px;
     display: flex;
 }
