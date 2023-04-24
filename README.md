@@ -1,3 +1,8 @@
+# Opening the website:
+
+Direct Link to the website's production build: https://react-twitter-clone-mido.web.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
